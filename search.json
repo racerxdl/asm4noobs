@@ -1,0 +1,17 @@
+---
+---
+[
+  {% for post in site.posts %}
+    {% capture locale_title %}{% t post.title %}{% endcapture %}
+    {% capture post_title %}{% if locale_title != blank %}{% t post.title %}{% elsif post.title %}{{ post.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+
+    {
+      "title"    : "{{ post_title | escape }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "category" : "{{ post.category }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "date"     : "{{ post.date }}"
+
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

@@ -1,15 +1,15 @@
 global:
   translated-by: "Traduzido por:"
+  search-posts: "Procurar"
 pages:
   home: Página Inicial
   contributing: Contribuindo
   posts: Tudo
-  recordings:
-    title: "Gravações"
-    description: "Baixe aqui algumas gravações para brincar de rádio!"
-  rtl-sdr:
-    title: "RTL-SDR"
-    description: "Informações sobre o rádio RTL-SDR"
+  x86-opcodes: "Opcodes x86 (AMD/Intel)"
+  arm-opcodes: "Opcodes ARM 32 bits"
+  arm64-opcodes: "Opcodes ARM 64 bits"
+  riscv-opcodes: "Opcodes RISC-V"
+  opcodes: "Opcodes"
 titles:
 langs:
   portuguese: Português

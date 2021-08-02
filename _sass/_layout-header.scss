@@ -141,3 +141,19 @@
         }
     }
   }
+
+.search-element {
+  position: absolute;
+  width: 50%;
+  margin: 0 auto;
+  top: 64px;
+}
+.search-element ul {
+  width: 50%;
+  background: #0f0f0f;
+}
+
+.search-input-div {
+  position: absolute;
+  right: 32px;
+}

@@ -18,3 +18,22 @@
     </div>
 
 </footer>
+
+
+<script src="/assets/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<div><a href="{{ site.url }}{url}">{title}</a></div>'
+  })
+</script>
+<!-- AnchorJS -->
+<script src="{{ site.baseurl_root }}/assets/anchor.min.js"></script>
+<script>
+  anchors.options.placement = 'left';
+  anchors.add('h1');
+  anchors.add();
+</script>
+<!-- End AnchorJS -->
