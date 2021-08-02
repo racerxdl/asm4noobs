@@ -1,0 +1,20 @@
+global:
+  translated-by: "Traduzido por:"
+pages:
+  home: Página Inicial
+  contributing: Contribuindo
+  posts: Tudo
+  recordings:
+    title: "Gravações"
+    description: "Baixe aqui algumas gravações para brincar de rádio!"
+  rtl-sdr:
+    title: "RTL-SDR"
+    description: "Informações sobre o rádio RTL-SDR"
+titles:
+langs:
+  portuguese: Português
+  english: Inglês
+descriptions:
+  contributing: "Como contribuir com asm4noobs"
+  home: "Este repositório é um tutorial dedicado ao ensino da linguagem assembly! Sejam bem-vindos a baixaria!"
+

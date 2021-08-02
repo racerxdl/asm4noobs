@@ -1,0 +1,85 @@
+url: https://asm.lucasteske.dev/
+name: Assembly 4 Noobs
+title: Assembly 4 Noobs
+description: 'Um tutorial para a baixaria!'
+image: '/_includes/logo.svg'
+
+author:
+  name:         Lucas Teske
+  url:          https://lucasteske.dev
+  email:        letshackit@nvx.li
+
+markdown:       kramdown
+include:
+  - _pages
+#
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-multiple-languages-plugin
+  - jekyll-seo-tag
+
+# Multiple Languages
+languages: ["pt-br"]
+exclude_from_localizations: ["javascript", "images", "css", "assets"]
+
+
+# Permalinks
+permalink:      /:year/:month/:title
+paginate:       5
+
+social:
+  twitter: lucasteske
+  github: racerxdl
+
+
+twitter:
+  username: lucasteske
+  card: summary_large_image
+
+
+# Excludes
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - site.conf
+  - run.sh
+  - Dockerfile
+  - vendor
+
+data:
+  en:
+    months:
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+  pt:
+    months:
+      - Janeiro
+      - Fevereiro
+      - Março
+      - Abril
+      - Maio
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
