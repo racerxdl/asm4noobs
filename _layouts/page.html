@@ -2,10 +2,21 @@
 layout: default
 ---
 
+{% capture i18n_date %}
+  {{ page.date | date: "%-d" }}
+  {% assign m = page.date | date: "%-m" | minus: 1 %}
+  {{ site.data[site.lang].months[m] }}
+  {{ page.date | date: "%Y" }}
+{% endcapture %}
+
+{% capture locale_title %}{% t page.title %}{% endcapture %}
+
+{% capture page_title %}{% if locale_title != blank %}{% t page.title %}{% else %}{{ page.title }}{% endif %}{% endcapture %}
+
 <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{% t page.title %}</h1>
+    <h1 class="post-title">{{ page_title }}</h1>
   </header>
   <hr/>
   <div class="post-content">

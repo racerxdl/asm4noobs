@@ -195,3 +195,28 @@ table {
             -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
+
+.register-table {
+  table-layout: fixed;
+}
+
+.registerh {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.register-td {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.register-border {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.registerm {
+  color: #CC9900;
+  font-style: italic;
+}

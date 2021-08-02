@@ -11,7 +11,7 @@ layout: default
 
 {% capture locale_title %}{% t page.title %}{% endcapture %}
 
-{% capture page_title %}{% if locale_title != blank %}{% t page.title %}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+{% capture page_title %}{% if locale_title != blank %}{% t page.title %}{% else %}{{ site.title }}{% endif %}{% endcapture %}
 
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -40,7 +40,7 @@ layout: default
       </time>
     {%- else -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
+        {{ i18n_date }}
       </time>
     {%- endif -%}
     {%- if page.author -%}

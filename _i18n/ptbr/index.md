@@ -6,56 +6,40 @@ Este repositório é um tutorial dedicado ao ensino da linguagem assembly! Sejam
 Conteúdo
 ========
 
-* [Assembly]
-  * [O que é Assembly?]
-  * [Um simples processador]
-  * [Uma simples memória]
-  * [Códigos de Operação]
-* [X86 (AMD/Intel)]
-  * [Pequena história]
-  * [Estrutura Básica do Processador]
-* [ARM64 (Raspberry PI / Android)]
-  * [Pequena história]
-  * [Estrutura Básica do Processador]
-* [RISC-V]
-  * [Pequena história]
-  * [Estrutura Básica do Processador]
+* Assembly
+  * [O que é Assembly?] **TODO**
+  * [Um simples processador] **TODO**
+  * [Uma simples memória] **TODO**
+  * [Códigos de Operação] **TODO**
+* x86 (AMD/Intel)
+  * Pequena história **TODO**
+  * Estrutura Básica do Processador **TODO**
+* ARM64 (Raspberry PI / Android)
+  * Pequena história] **TODO**
+  * Estrutura Básica do Processador **TODO**
+* RISC-V
+  * Pequena história **TODO**
+  * Estrutura Básica do Processador **TODO**
+* Criando um servidor web
+  * [Introdução](/webserver/intro)
+  * Linux (x86) **TODO**
+  * Windows (x86) **TODO**
+  * Linux (ARM64) **TODO**
+  * Linux (RISC-V) **TODO**
+  * MacOSX (x86) **TODO**
+  * MacOSX (ARM64) **TODO**
 * Referências
-  * [Opcodes X86](/opcodes/x86)
-  * [Opcodes ARM 32 bits](/opcodes/arm)
-  * [Opcodes ARM 64 bits](/opcodes/arm64)
-  * [Opcodes RISC-V](/opcodes/riscv)
-
-
-
-<div class="catalogue">
-  {% for post in paginator.posts %}
-    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item catalogue-item-2">
-      <div>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h1 class="catalogue-title">{{ post.title }}</h1>
-        <div class="catalogue-line"></div>
-        {% if post.image %}
-          <div class="post-image-div">
-            <img src="{{ post.image }}" class="post-image post-image-2"/>
-          </div>
-        {% endif %}
-        <p>
-          {{ post.content | strip_html | truncatewords: 100 }}
-        </p>
-
-      </div>
-    </a>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-  {% endif %}
-
-  <span>{{ paginator.page }}</span>
-</div>
+  * Tabela de Registradores
+    * [x86](/registers/x86)
+    * [ARM](/registers/arm)
+    * [RISC-V](/registers/riscv)
+  * Tabela de Opcodes
+    * [x86](/opcodes/x86)
+    * [ARM 32 bits](/opcodes/arm)
+    * [ARM 64 bits](/opcodes/arm64)
+    * [RISC-V](/opcodes/riscv)
+  * Convenção de chamada
+    * x86 (32 e 64 bit)
+    * RISCV **TODO**
+    * ARM 32 bit **TODO**
+    * ARM 64 bit **TODO**
