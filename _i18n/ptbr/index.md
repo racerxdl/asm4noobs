@@ -23,11 +23,36 @@ Conteúdo
 * Criando um servidor web
   * [Introdução](/webserver/intro)
   * Linux (x86) **TODO**
+    * [Criando o projeto e um programa que sai](/webserver/linux/part0)
+    * [Fazendo Hello World](/webserver/linux/part1)
+    * Aceitando uma conexão TCP **TODO**
+    * Fazendo um servidor HTTP **TODO**
+    * Conclusões **TODO**
   * Windows (x86) **TODO**
+    * Fazendo um Hello World em assembly **TODO**
+    * Aceitando uma conexão TCP **TODO**
+    * Fazendo um servidor HTTP **TODO**
+    * Conclusões **TODO**
   * Linux (ARM64) **TODO**
+    * Fazendo um Hello World em assembly **TODO**
+    * Aceitando uma conexão TCP **TODO**
+    * Fazendo um servidor HTTP **TODO**
+    * Conclusões **TODO**
   * Linux (RISC-V) **TODO**
-  * MacOSX (x86) **TODO**
-  * MacOSX (ARM64) **TODO**
+    * Fazendo um Hello World em assembly **TODO**
+    * Aceitando uma conexão TCP **TODO**
+    * Fazendo um servidor HTTP **TODO**
+    * Conclusões **TODO**
+  * MacOSX (x86)
+    * Fazendo um Hello World em assembly **TODO**
+    * Aceitando uma conexão TCP **TODO**
+    * Fazendo um servidor HTTP **TODO**
+    * Conclusões **TODO**
+  * MacOSX (ARM64)
+    * Fazendo um Hello World em assembly **TODO** 
+    * Aceitando uma conexão TCP **TODO**
+    * Fazendo um servidor HTTP **TODO**
+    * Conclusões **TODO**
 * Referências
   * Tabela de Registradores
     * [x86](/registers/x86)
@@ -43,3 +68,8 @@ Conteúdo
     * RISCV **TODO**
     * ARM 32 bit **TODO**
     * ARM 64 bit **TODO**
+  * Chamadas de Sistema
+    * [Linux x64](/syscall/linux-amd64)
+  * [X86 Assembly (Wikibooks)](https://en.wikibooks.org/wiki/X86_Assembly)
+  * [OSDEV](https://wiki.osdev.org/Expanded_Main_Page)
+  * [Intel vs. AT&T syntax](http://staffwww.fullcoll.edu/aclifton/courses/cs241/syntax.html)
