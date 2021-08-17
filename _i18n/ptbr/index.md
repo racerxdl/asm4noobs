@@ -29,26 +29,31 @@ Conteúdo
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
   * Windows (x86) **TODO**
+    * Criando o projeto e um programa que sai **TODO**
     * Fazendo um Hello World em assembly **TODO**
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
   * Linux (ARM64) **TODO**
+    * Criando o projeto e um programa que sai **TODO**
     * Fazendo um Hello World em assembly **TODO**
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
   * Linux (RISC-V) **TODO**
+    * Criando o projeto e um programa que sai **TODO**
     * Fazendo um Hello World em assembly **TODO**
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
   * MacOSX (x86)
-    * [Fazendo um Hello World em assembly](/webserver/macosx/part0)
+    * [Criando o projeto e um programa que sai](/webserver/macosx/part0)
+    * [Fazendo Hello World](/webserver/macosx/part1)
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
   * MacOSX (ARM64)
+    * Criando o projeto e um programa que sai **TODO**
     * Fazendo um Hello World em assembly **TODO** 
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**

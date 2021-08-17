@@ -18,6 +18,7 @@ Aqui serão listadas as chamadas de sistema do kernel darwin (MacOSX) da arquite
 
 O conteúdo desta página pode ser lido programaticamente usando o arquivo [syscalls_darwin_amd64.json](/syscalls_darwin_amd64.json)
 
+
 ## Ordem dos argumentos
 
 <table>
@@ -44,9 +45,9 @@ O conteúdo desta página pode ser lido programaticamente usando o arquivo [sysc
 <h2> {{ syscall.id }} - {{ syscall.name }} </h2>
 
 <ul>
-	<li>Número (RAX): <b>{{ syscall.id }}</b></li>
-	<li>Tipo do Retorno: {{ syscall.returnType }}</li>
-	<li>Nivel de Auditoria: {{ syscall.audit }}</li>
+	<li>Número (RAX): <b>{{ syscall.id | plus: 33554432 | dec_to_hex }}</b></li>
+	<li>Tipo do Retorno: <b>{{ syscall.returnType }}</b></li>
+	<li>Nivel de Auditoria: <b>{{ syscall.audit }}</b></li>
 	<li>Argumentos:</li>
 </ul>
 
