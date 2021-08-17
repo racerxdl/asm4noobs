@@ -44,7 +44,7 @@ Conteúdo
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
   * MacOSX (x86)
-    * Fazendo um Hello World em assembly **TODO**
+    * [Fazendo um Hello World em assembly](/webserver/macosx/part0)
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
