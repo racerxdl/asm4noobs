@@ -70,6 +70,7 @@ Conteúdo
     * ARM 64 bit **TODO**
   * Chamadas de Sistema
     * [Linux x64](/syscall/linux-amd64)
+    * [MacOSX x64](/syscall/darwin-amd64)
   * [X86 Assembly (Wikibooks)](https://en.wikibooks.org/wiki/X86_Assembly)
   * [OSDEV](https://wiki.osdev.org/Expanded_Main_Page)
   * [Intel vs. AT&T syntax](http://staffwww.fullcoll.edu/aclifton/courses/cs241/syntax.html)
