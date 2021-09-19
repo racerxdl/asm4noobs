@@ -1,11 +1,14 @@
 
 Este repositório é um tutorial dedicado ao ensino da linguagem assembly! Sejam bem-vindos a baixaria!
 
+Código fonte do site: [https://github.com/racerxdl/asm4noobs](https://github.com/racerxdl/asm4noobs)
+
 ** WORK IN PROGRESS **
 
 Conteúdo
 ========
 
+* [Contribuindo](/contributing)
 * Assembly
   * [O que é Assembly?] **TODO**
   * [Um simples processador] **TODO**
