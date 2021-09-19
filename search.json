@@ -1,0 +1,159 @@
+[
+  
+    
+    
+
+    {
+      "title"    : "[linux-x86] Aceitando uma conexão TCP",
+      "url"      : "/webserver/linux/part2",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, tcp, exit",
+      "date"     : "2020-09-14 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Chamadas de sistema MacOSX AMD64",
+      "url"      : "/syscall/darwin-amd64",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, exit, macosx, darwin",
+      "date"     : "2020-08-17 15:00:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Chamadas de sistema Linux AMD64",
+      "url"      : "/syscall/linux-amd64",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, exit",
+      "date"     : "2020-08-16 15:00:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "[macosx-x86] Criando o projeto e um programa que sai",
+      "url"      : "/webserver/macosx/part0",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, exit",
+      "date"     : "2020-08-16 15:00:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "[macosx-x86] Fazendo Hello World",
+      "url"      : "/webserver/macosx/part1",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, exit, macosx, darwin",
+      "date"     : "2020-08-09 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "[linux-x86] Fazendo Hello World",
+      "url"      : "/webserver/linux/part1",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, exit",
+      "date"     : "2020-08-09 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "[linux-x86] Criando o projeto e um programa que sai",
+      "url"      : "/webserver/linux/part0",
+      "category" : "",
+      "tags"     : "x86, intel, amd, syscall, exit",
+      "date"     : "2020-08-03 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Registradores x86 (32 e 64)",
+      "url"      : "/registers/x86",
+      "category" : "",
+      "tags"     : "x86, intel, registers, amd",
+      "date"     : "2020-08-02 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Introdução: Servidor web em assembly",
+      "url"      : "/webserver/intro",
+      "category" : "",
+      "tags"     : "x86, arm, apple, webserver, html, intel, amd",
+      "date"     : "2020-08-02 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Opcodes x86 (AMD/Intel)",
+      "url"      : "/opcodes/x86",
+      "category" : "",
+      "tags"     : "x86, intel, amd",
+      "date"     : "2020-08-02 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Opcodes RISC-V",
+      "url"      : "/opcodes/riscv",
+      "category" : "",
+      "tags"     : "riscv",
+      "date"     : "2020-08-02 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Opcodes ARM 64 bits",
+      "url"      : "/opcodes/arm64",
+      "category" : "",
+      "tags"     : "arm64, aarch64, applem1, m1, raspberry, android, ios",
+      "date"     : "2020-08-02 15:33:00 +0000"
+
+    } ,
+  
+    
+    
+
+    {
+      "title"    : "Opcodes ARM 32 bits",
+      "url"      : "/opcodes/arm",
+      "category" : "",
+      "tags"     : "arm, armhf, raspberry, android",
+      "date"     : "2020-08-02 15:33:00 +0000"
+
+    } 
+  
+]

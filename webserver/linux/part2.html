@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <title>[linux-x86] Aceitando uma conexão TCP | Assembly 4 Noobs</title>
+
+  <!-- Global -->
+  <link rel="canonical" href="https://asm.lucasteske.dev/webserver/linux/part2">
+  <meta name="generator" property="generator" content="Jekyll v4.2.0">
+  <meta name="author" property="author" content="Lucas Teske">
+  <meta name="description" property="description" content="
+">
+  
+  <meta name="keywords" content="x86, intel, amd, syscall, tcp, exit">
+  
+
+  <!-- Open Graph -->
+  <meta name="og:locale" property="og:locale" content="ptbr">
+  <meta name="og:type" property="og:type" content="article">
+  <meta name="og:title" property="og:title" content="[linux-x86] Aceitando uma conexão TCP | Assembly 4 Noobs">
+  <meta name="og:url" property="og:url" content="https://asm.lucasteske.dev/webserver/linux/part2">
+  <meta name="og:image" property="og:image" content="https://asm.lucasteske.dev/_includes/logo.svg">
+  <meta name="og:site_name" property="og:site_name" content="Assembly 4 Noobs">
+  <meta name="og:description" property="og:description" content="
+">
+
+  <!-- Article -->
+  <meta name="article:author" property="article:author" content="Lucas Teske">
+  <meta name="article:publisher" property="article:publisher" content="Lucas Teske">
+  <meta name="article:published_time" property="article:published_time" content="2020-09-14T15:33:00+00:00">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" property="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" property="twitter:title" content="[linux-x86] Aceitando uma conexão TCP | Assembly 4 Noobs">
+  <meta name="twitter:site" property="twitter:site" content="@lucasteske">
+  <meta name="twitter:creator" property="twitter:creator" content="@lucasteske">
+  <meta name="twitter:description" property="twitter:description" content="
+">
+  <meta name="twitter:image" property="twitter:image" content="https://asm.lucasteske.dev/_includes/logo.svg">
+  <meta name="twitter:image:alt" property="twitter:image:alt" content="
+">
+
+  <!-- JSON LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "url": "https://asm.lucasteske.dev/webserver/linux/part2",
+    "name": "[linux-x86] Aceitando uma conexão TCP | Assembly 4 Noobs",
+    "headline": "[linux-x86] Aceitando uma conexão TCP | Assembly 4 Noobs",
+    "keywords": "x86,intel,amd,syscall,tcp,exit",
+    "description": "",
+    "articleBody": "\n",
+    "datePublished": "2020-09-14 15:33:00 +0000",
+    "dateModified": "2020-09-14 15:33:00 +0000",
+    "author": {
+      "@type": "Person",
+      "name": "Lucas Teske",
+      "email": "letshackit@nvx.li"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Assembly 4 Noobs",
+      "url": "https://asm.lucasteske.dev",
+      "logo": {
+        "@type": "ImageObject",
+        "width": 32,
+        "height": 32,
+        "url": "https://asm.lucasteske.dev/icon/favicon.ico"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://asm.lucasteske.dev/webserver/linux/part2"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://asm.lucasteske.dev/_includes/logo.svg"
+    }
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <meta name="msapplication-TileColor" property="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" property="msapplication-config" content="/assets/browserconfig.xml">
+  <meta name="theme-color" property="theme-color" content="#ffffff">
+
+  <!-- Custom Scripts -->
+  <script async src="/assets/simple-jekyll-search.min.js"></script>
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="https://asm.lucasteske.dev/feed.xml" title="Assembly 4 Noobs">
+
+  <!-- Google Analytics-->
+  
+
+</head>
+<body>
+<header class="site-header"><a class="site-title" rel="author" href="/">Assembly 4 Noobs</a><nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewbox="0 0 18 15" width="18px" height="15px">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+          </svg>
+        </span>
+      </label>
+
+<!--       <div class="trigger">
+            
+            <a class="page-link" href="/contributing">
+              Contribuindo
+            </a>
+            
+            <a class="page-link" href="/opcodes/">
+              Opcodes
+            </a>
+            
+            <a class="page-link" href="/">
+              Página Inicial
+            </a></div> -->
+    </nav><div class="site-icon">
+    <a href="/" rel="author">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewbox="0 0 294.07843 295.43309" id="svg4173" version="1.1" inkscape:version="0.91 r13725" sodipodi:docname="gear2.svg">
+  <defs id="defs4175"></defs>
+  <namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="490.61064" inkscape:cy="-12.283456" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" fit-margin-top="5" fit-margin-left="5" fit-margin-right="5" fit-margin-bottom="5" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="1358" inkscape:window-y="-8" inkscape:window-maximized="1"></namedview>
+  <metadata id="metadata4178">
+    <rdf>
+      <work rdf:about="">
+        <format>image/svg+xml</format>
+        <type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></type>
+        <title></title>
+      </work>
+    </rdf>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(504.18207,-224.64566)">
+    <path style="fill:#33a6bd;fill-opacity:1" d="m -352.29353,500.53467 c -0.855,-1.03975 -2.6888,-5.80593 -4.0749,-10.59152 -1.3861,-4.78559 -3.6623,-9.28668 -5.0581,-10.00246 -1.3958,-0.71577 -6.4959,-1.68982 -11.3335,-2.16455 -9.6562,-0.94758 -9.068,-1.30328 -17.6277,10.65966 -5.5457,7.7506 -9.4385,8.23232 -20.7947,2.57331 -11.7272,-5.84393 -12.0911,-6.63998 -8.8272,-19.3104 l 2.7797,-10.79027 -8.0614,-7.22029 c -4.4338,-3.97119 -8.8852,-7.22033 -9.8918,-7.22033 -1.0067,0 -5.4709,1.69476 -9.9205,3.76613 -4.4494,2.07136 -8.9732,3.77277 -10.0526,3.7809 -2.9006,0.0218 -9.1838,-7.29496 -13.4091,-15.61468 -3.4329,-6.75952 -3.5375,-7.57966 -1.3856,-10.86391 1.2802,-1.95383 4.6969,-5.35958 7.5928,-7.5683 2.8958,-2.20873 5.6382,-5.19181 6.0945,-6.62909 1.0071,-3.1734 -4.5578,-19.95472 -7.1481,-21.55567 -1.0201,-0.63044 -5.406,-1.58996 -9.7464,-2.13226 -12.2948,-1.53613 -13.3074,-2.85168 -13.3074,-17.28873 0,-14.43705 1.0126,-15.7526 13.3074,-17.28874 4.3404,-0.54229 8.7263,-1.50181 9.7464,-2.13225 1.671,-1.03277 7.9496,-16.96359 7.9496,-20.17082 0,-0.72012 -3.7431,-4.93468 -8.3181,-9.36572 -4.5747,-4.43103 -8.3097,-8.66937 -8.2998,-9.41856 0.045,-3.40328 10.4747,-19.72761 13.8127,-21.61948 3.3511,-1.89926 4.6458,-1.69413 13.0155,2.06198 l 9.2944,4.17104 4.9931,-3.09031 c 2.7463,-1.69968 6.9355,-5.1207 9.3096,-7.6023 l 4.3164,-4.51197 -2.7255,-10.57983 c -3.2329,-12.54999 -2.5951,-13.89245 9.2163,-19.39917 11.3315,-5.28292 14.9922,-4.76895 20.4598,2.87253 8.5597,11.96293 7.9715,11.60724 17.6277,10.65965 4.8376,-0.47473 9.9377,-1.44877 11.3335,-2.16454 1.3958,-0.71578 3.672,-5.21688 5.0581,-10.00246 1.3861,-4.7856 3.2199,-9.55178 4.0749,-10.59152 3.0235,-3.67682 25.9036,-1.34493 28.6047,2.91535 0.6973,1.0999 1.2888,6.08319 1.3143,11.07398 0.025,4.99078 0.5464,9.83561 1.1575,10.76626 1.5056,2.29294 16.279,9.65058 19.3773,9.65058 1.3679,0 5.7384,-2.72224 9.7124,-6.04943 3.9739,-3.3272 8.6011,-6.04944 10.2825,-6.04944 3.5242,0 17.55219,10.61569 19.95099,15.09799 1.7003,3.17705 -0.1843,8.28047 -6.239,16.89502 -1.5518,2.2079 -2.8215,4.87057 -2.8215,5.91703 0,2.17849 8.9407,16.73607 11.2931,18.38786 0.8591,0.60323 6.1402,0.67709 11.73575,0.16414 7.16439,-0.65678 10.85361,-0.36841 12.47215,0.97486 3.07712,2.55376 8.64977,20.92697 7.47238,24.63659 -0.55428,1.74645 -4.87987,4.73656 -10.61183,7.33555 -5.40385,2.45022 -9.72065,5.38234 -9.77696,6.64084 -0.0556,1.23942 -0.10091,5.6563 -0.10091,9.81529 0,4.15899 0.0453,8.57587 0.10091,9.81527 0.0562,1.25852 4.37311,4.19063 9.77696,6.64085 5.73196,2.599 10.05755,5.58911 10.61183,7.33555 1.17739,3.70962 -4.39526,22.08282 -7.47238,24.63659 -1.61854,1.34327 -5.30776,1.63163 -12.47215,0.97485 -5.59555,-0.51294 -10.87665,-0.43908 -11.73575,0.16413 -2.3524,1.6518 -11.2931,16.20939 -11.2931,18.38788 0,1.04646 1.2697,3.70913 2.8215,5.91703 6.0547,8.61455 7.9393,13.71797 6.239,16.89502 -2.3988,4.4823 -16.42679,15.09799 -19.95099,15.09799 -1.6814,0 -6.3086,-2.72224 -10.2825,-6.04944 -3.974,-3.32719 -8.3445,-6.04943 -9.7124,-6.04943 -3.0983,0 -17.8717,7.35763 -19.3773,9.65059 -0.6111,0.93066 -1.132,5.77547 -1.1575,10.76625 -0.025,4.99079 -0.617,9.97408 -1.3143,11.07398 -2.7011,4.26027 -25.5812,6.59217 -28.6047,2.91535 z m 15.4063,-49.49263 c 16.4684,-4.21187 27.8222,-10.77103 39.3952,-22.75853 11.2898,-11.6941 17.8339,-24.06851 21.2458,-40.17395 2.7763,-13.10536 2.7763,-18.38934 0,-31.4947 -3.4119,-16.10547 -9.956,-28.47985 -21.2458,-40.17398 -11.573,-11.98748 -22.9268,-18.54664 -39.3952,-22.7585 -14.177,-3.6259 -21.6182,-3.73911 -35.8527,-0.54542 -13.9534,3.13055 -23.9842,7.89998 -34.0192,16.17529 -27.0161,22.27853 -36.8599,56.70989 -25.6203,89.61387 4.3722,12.79979 8.8697,19.74325 20.187,31.166 10.0951,10.18925 22.0896,16.9231 37.1905,20.87927 14.2721,3.73909 23.7029,3.75658 38.1147,0.0706 z m -37.4116,-20.70606 c -0.5545,-0.55451 -1.0082,-10.08238 -1.0082,-21.17303 0,-11.09063 -0.5581,-20.16479 -1.2402,-20.16479 -3.2834,0 -14.6904,-12.02362 -17.8554,-18.82038 -4.5684,-9.81077 -4.8911,-25.80722 -0.7067,-35.02132 3.6069,-7.94225 12.496,-16.82442 20.3621,-20.34614 9.3224,-4.17382 10.0185,-2.82309 10.0742,19.54999 0.046,18.5383 0.1569,19.17696 3.7808,21.81465 3.5926,2.61473 3.8743,2.61473 7.4668,0 3.624,-2.63769 3.7348,-3.27635 3.7809,-21.81465 0.055,-22.37308 0.7518,-23.72381 10.0742,-19.54999 13.8651,6.20755 22.0232,18.91031 22.9564,35.74435 0.7658,13.8142 -3.2694,23.89474 -12.9899,32.45104 -3.7443,3.29584 -7.3926,5.99245 -8.1072,5.99245 -0.7147,0 -1.2995,8.45137 -1.2995,18.7808 0,20.69084 -0.5534,23.56526 -4.5371,23.56526 -3.919,0 -4.537,-2.90075 -4.537,-21.29673 l 0,-16.51225 -9.0741,0 -9.0742,0 0,16.51225 c 0,9.08176 -0.4131,17.58878 -0.918,18.9045 -0.9251,2.41056 -5.2784,3.25346 -7.1479,1.38399 z m 27.8441,-46.08879 c 24.1542,-7.23679 30.5244,-40.09832 11.0845,-57.1806 l -5.9088,-5.19215 -0.4253,17.58791 -0.4252,17.58792 -7.4854,5.49477 c -8.0063,5.87715 -7.9578,5.88077 -16.95,-1.26708 l -5.6251,-4.47145 -0.4243,-17.46604 -0.4242,-17.46603 -5.9089,5.19215 c -7.5402,6.62583 -11.408,15.17367 -11.45,25.30543 -0.098,23.52471 20.9222,38.77227 43.9427,31.87517 z m -13.4263,34.69569 c -1.8986,-1.89867 -2.4775,-12.84706 -0.8969,-16.96597 1.1875,-3.0943 6.0508,-3.0943 7.2382,0 2.5561,6.66096 0.2205,18.7808 -3.619,18.7808 -0.4991,0 -1.7241,-0.81667 -2.7223,-1.81483 z" id="path6000" inkscape:connector-curvature="0" inkscape:export-xdpi="90" inkscape:export-ydpi="90"></path>
+  </g>
+</svg>
+
+    </a>
+  </div>
+  <div class="search-input-div">
+    <input type="text" id="search-input" style="margin: 0 auto;" placeholder="Procurar">
+  </div>
+
+</header><main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <div id="search-box" class="search-element">
+              <ul id="results-container" class="results-container"></ul>
+            </div>
+            
+
+
+
+
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">[linux-x86] Aceitando uma conexão TCP</h1>
+  </header>
+  <hr>
+  <div class="post-content">
+    
+
+  </div>
+
+</article>
+        </div>
+    </main><footer class="site-footer h-card">
+    <data class="u-url" href="/"></data>
+
+    <div class="wrapper">
+
+        <div class="footer">
+            <div class="footer-title">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a> 2021</div>
+
+            <div class="footer-social-links">
+                <a target="_blank" rel="me" href="https://github.com/racerxdl">
+                    <svg role="img" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title>
+<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+                </a>
+                <a target="_blank" rel="me" href="https://twitter.com/lucasteske">
+                    <svg role="img" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter icon</title>
+<path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+<script src="/assets/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<div><a href="https://asm.lucasteske.dev{url}">{title}</a></div>'
+  })
+</script>
+<!-- AnchorJS -->
+<script src="/assets/anchor.min.js"></script>
+<script>
+  anchors.options.placement = 'left';
+  anchors.add('h1');
+  anchors.add();
+</script>
+<!-- End AnchorJS -->
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6fdff3f05d2847b58d553381bb1e8115"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
