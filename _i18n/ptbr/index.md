@@ -43,12 +43,12 @@ Conteúdo
     * Aceitando uma conexão TCP **TODO**
     * Fazendo um servidor HTTP **TODO**
     * Conclusões **TODO**
-  * Linux (RISC-V) **TODO**
-    * Criando o projeto e um programa que sai **TODO**
-    * Fazendo um Hello World em assembly **TODO**
-    * Aceitando uma conexão TCP **TODO**
-    * Fazendo um servidor HTTP **TODO**
-    * Conclusões **TODO**
+  * Linux (RISC-V)
+    * [Criando o projeto e um programa que sai](/webserver/riscv/part0)
+    * [Fazendo um Hello World em assembly](/webserver/riscv/part1)
+    * [Aceitando uma conexão TCP](/webserver/riscv/part2)
+    * [Fazendo um servidor HTTP](/webserver/riscv/part3)
+    * [Conclusões](/webserver/riscv/part4)
   * MacOSX (x86)
     * [Criando o projeto e um programa que sai](/webserver/macosx/part0)
     * [Fazendo Hello World](/webserver/macosx/part1)

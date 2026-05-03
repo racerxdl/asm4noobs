@@ -20,7 +20,7 @@ O objetivo deste tutorial é dar uma abordagem mais prática à programação em
 * Windows (x86) **TODO**
 * Linux (x86)
 * Linux (ARM64) **TODO**
-* Linux (RISC-V) **TODO**
+* Linux (RISC-V)
 * MacOSX (x86) **TODO**
 * MacOSX (ARM64) **TODO**
 
