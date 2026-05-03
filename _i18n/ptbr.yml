@@ -16,6 +16,10 @@ pages:
   arm64-structure: "Estrutura do Processador ARM64"
   riscv-history: "Pequena história do RISC-V"
   riscv-structure: "Estrutura do Processador RISC-V"
+  what-is-asm: "O que é Assembly?"
+  processor: "Um simples processador"
+  memory: "Uma simples memória"
+  opcodes-intro: "Códigos de Operação"
 titles:
 langs:
   portuguese: Português

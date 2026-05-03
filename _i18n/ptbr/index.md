@@ -10,10 +10,10 @@ Conteúdo
 
 * [Contribuindo](/contributing)
 * Assembly
-  * [O que é Assembly?] **TODO**
-  * [Um simples processador] **TODO**
-  * [Uma simples memória] **TODO**
-  * [Códigos de Operação] **TODO**
+  * [O que é Assembly?](/assembly/what-is)
+  * [Um simples processador](/assembly/processor)
+  * [Uma simples memória](/assembly/memory)
+  * [Códigos de Operação](/assembly/opcodes)
 * x86 (AMD/Intel)
   * [Pequena história](/arch/x86/history)
   * [Estrutura Básica do Processador](/arch/x86/structure)
