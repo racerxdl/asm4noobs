@@ -15,14 +15,14 @@ Conteúdo
   * [Uma simples memória] **TODO**
   * [Códigos de Operação] **TODO**
 * x86 (AMD/Intel)
-  * Pequena história **TODO**
-  * Estrutura Básica do Processador **TODO**
+  * [Pequena história](/arch/x86/history)
+  * [Estrutura Básica do Processador](/arch/x86/structure)
 * ARM64 (Raspberry PI / Android)
-  * Pequena história] **TODO**
-  * Estrutura Básica do Processador **TODO**
+  * [Pequena história](/arch/arm64/history)
+  * [Estrutura Básica do Processador](/arch/arm64/structure)
 * RISC-V
-  * Pequena história **TODO**
-  * Estrutura Básica do Processador **TODO**
+  * [Pequena história](/arch/riscv/history)
+  * [Estrutura Básica do Processador](/arch/riscv/structure)
 * Criando um servidor web
   * [Introdução](/webserver/intro)
 * Linux (x86)
@@ -31,12 +31,6 @@ Conteúdo
   * [Aceitando uma conexão TCP](/webserver/linux/part2)
   * [Fazendo um servidor HTTP](/webserver/linux/part3)
   * [Conclusões](/webserver/linux/part4)
-  * Windows (x86) **TODO**
-    * Criando o projeto e um programa que sai **TODO**
-    * Fazendo um Hello World em assembly **TODO**
-    * Aceitando uma conexão TCP **TODO**
-    * Fazendo um servidor HTTP **TODO**
-    * Conclusões **TODO**
   * Linux (ARM64) **TODO**
     * Criando o projeto e um programa que sai **TODO**
     * Fazendo um Hello World em assembly **TODO**

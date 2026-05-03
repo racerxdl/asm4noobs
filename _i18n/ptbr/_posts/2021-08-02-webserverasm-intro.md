@@ -17,7 +17,6 @@ tags:
 
 O objetivo deste tutorial é dar uma abordagem mais prática à programação em assembly. Os dois melhores jeitos de se aprender assembly é por engenharia reversa ou programando algo. Aqui iremos fazer um servidor web totalmente em assembly que irá rodar como um aplicativo normal em seu sistema operacional. A ideia é criar um programa totalmente em assembly próximo ao equivalente em C no final desta página. Como a linguagem assembly é totalmente dependende de arquitetura e as chamadas de sistema dependem do sistema operacional, algumas alternativas de tutoriais estarão aqui dispostas.
 
-* Windows (x86) **TODO**
 * Linux (x86)
 * Linux (ARM64) **TODO**
 * Linux (RISC-V)

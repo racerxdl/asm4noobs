@@ -10,6 +10,12 @@ pages:
   arm64-opcodes: "Opcodes ARM 64 bits"
   riscv-opcodes: "Opcodes RISC-V"
   opcodes: "Opcodes"
+  x86-history: "Pequena história do x86"
+  x86-structure: "Estrutura do Processador x86"
+  arm64-history: "Pequena história do ARM64"
+  arm64-structure: "Estrutura do Processador ARM64"
+  riscv-history: "Pequena história do RISC-V"
+  riscv-structure: "Estrutura do Processador RISC-V"
 titles:
 langs:
   portuguese: Português
