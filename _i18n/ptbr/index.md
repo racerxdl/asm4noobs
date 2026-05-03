@@ -25,12 +25,12 @@ Conteúdo
   * Estrutura Básica do Processador **TODO**
 * Criando um servidor web
   * [Introdução](/webserver/intro)
-  * Linux (x86) **TODO**
-    * [Criando o projeto e um programa que sai](/webserver/linux/part0)
-    * [Fazendo Hello World](/webserver/linux/part1)
-    * Aceitando uma conexão TCP **TODO**
-    * Fazendo um servidor HTTP **TODO**
-    * Conclusões **TODO**
+* Linux (x86)
+  * [Criando o projeto e um programa que sai](/webserver/linux/part0)
+  * [Fazendo Hello World](/webserver/linux/part1)
+  * [Aceitando uma conexão TCP](/webserver/linux/part2)
+  * [Fazendo um servidor HTTP](/webserver/linux/part3)
+  * [Conclusões](/webserver/linux/part4)
   * Windows (x86) **TODO**
     * Criando o projeto e um programa que sai **TODO**
     * Fazendo um Hello World em assembly **TODO**
