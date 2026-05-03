@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://asm.lucasteske.dev/sitemap_index.xml
